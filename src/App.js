@@ -1,23 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import SearchBar from "./components/SearchBar/SearchBar";
+import ProductCard from "./components/ProductCard/ProductCard";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState([
+    {
+      name: "New Shoe",
+      price: 55,
+      src: "https://media.aldoshoes.com/v3/product/torino/001-001-043/torino_black_001-001-043_main_sq_gy_800x800.jpg",
+    },
+  ]);
+
+  const [loading, setLoading] = useState(false);
+
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter" && searchTerm) {
+      // Make the API call
+      setLoading(true);
+      fetch(`http://localhost:YOUR_PORT/api/endpoint?q=${searchTerm}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setResults(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data: ", error);
+          setLoading(false);
+        });
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        handleKeyUp={handleKeyUp}
+      />
+      <div style={{ padding: "0 72px" }}>
+        <div className="search-results">
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            results.map((item, index) => (
+              <div key={index} className="image-container">
+                <ProductCard
+                  name={item.name}
+                  price={item.price}
+                  imgSrc={item.image_url}
+                />
+              </div>
+            ))
+          )}
+        </div>
+      </div>
     </div>
   );
 }
