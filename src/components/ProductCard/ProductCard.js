@@ -6,7 +6,7 @@ function ProductCard({ name, price, imgSrc }) {
     <div className="product-card">
       <img src={imgSrc} alt={name} /> {/* Add image src */}
       <h3>{name}</h3>
-      <p>${price}</p>
+      <p>{price}</p>
     </div>
   );
 }
