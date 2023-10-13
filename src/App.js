@@ -20,10 +20,11 @@ function App() {
     if (e.key === "Enter" && searchTerm) {
       // Make the API call
       setLoading(true);
-      fetch(`http://localhost:YOUR_PORT/api/endpoint?q=${searchTerm}`)
+      fetch(`http://localhost:5000/aisearch?q=${searchTerm}`)
         .then((response) => response.json())
         .then((data) => {
-          setResults(data);
+            console.log('data --- ', data)
+          setResults(data.matching_shoes.slice(0, 10));
           setLoading(false);
         })
         .catch((error) => {
