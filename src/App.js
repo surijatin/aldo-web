@@ -21,7 +21,6 @@ function App() {
       fetch(`http://localhost:5000/aisearch?q=${searchTerm}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log("data --- ", data);
           setResults(data.matching_shoes.slice(0, 10));
           setLoading(false);
         })
