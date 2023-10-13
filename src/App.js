@@ -41,7 +41,7 @@ function App() {
     event.preventDefault();
 
     const formData = new FormData();
-    formData.append("image", selectedFile);
+    formData.append("file", event.target.files[0]);
 
     try {
       const response = await fetch("http://localhost:5000/similar_images", {
@@ -50,7 +50,12 @@ function App() {
       });
       const data = await response.json();
       console.log(data);
-      setResults(data);
+      const updatedData = data.similar_images.map((itm) => {
+          return {
+              image_url: `http://localhost:5000/${itm}`
+          }
+      })
+      setResults(updatedData);
     } catch (error) {
       console.error("Error uploading file:", error);
     }
