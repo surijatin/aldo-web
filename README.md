@@ -1,24 +1,19 @@
-# ALDO WEB Frontend
+# ALDO WEB Frontend & Backend
 
-This is a mock ALDO website frontend built for a Hackathon. The project is built using create-react-app and utilizes npm for package management.
+This project encompasses both the frontend and backend of a mock ALDO website, created for a Hackathon. It features an enhanced user interface, robust backend services, improved search functionality, and innovative object recognition features.
 
 ## Features
-
-- Improved search results bar
-- Object recognition functionality
-  - User uploads an image from the frontend
-  - Matching shoe results are displayed on the frontend
+- **Improved Search Bar**: Advanced search capabilities for an optimal user experience.
+- **Object Recognition**: Users can upload an image, and the backend processes it to display matching shoe products on the frontend.
+- **Integrated Backend**: Supports the frontend with necessary data handling and services.
 
 ## Getting Started
-
 1. Clone the repository
-2. Install dependencies using `npm install`
+2. Install dependencies using `npm install` in the frontend repository.
 3. Start the development server using `npm start`
 
-## Contributing
+You can find the backend code in the `main.py` script.
 
-Contributions are welcome! Please open an issue or submit a pull request.
+---
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Explore the synergy of frontend and backend technologies in the ALDO WEB project, showcasing the future of online shopping experiences.
