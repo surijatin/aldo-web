@@ -15,7 +15,7 @@ This project encompasses both the frontend and backend of a mock ALDO website, c
 You can find the backend code in the `main.py` script.
 
 ## Acknowledgments
-A special thanks to everyone who supported us during the Hackathon. Our team's efforts were recognized with a win, as highlighted in this [LinkedIn post]([URL_OF_LINKEDIN_POST](https://www.linkedin.com/posts/bensadoun-mcgill_futureofretail-activity-7119713937687724033-xrIz?utm_source=share&utm_medium=member_desktop)).
+A special thanks to everyone who supported us during the Hackathon. Our team's efforts were recognized with a win, as highlighted in this [LinkedIn post](https://www.linkedin.com/posts/bensadoun-mcgill_futureofretail-activity-7119713937687724033-xrIz?utm_source=share&utm_medium=member_desktop).
 
 ---
 
